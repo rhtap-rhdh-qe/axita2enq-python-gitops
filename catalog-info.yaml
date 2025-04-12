@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: axita2enq-python-gitops
+  description: This is GitOps manifest for axita2enq-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=axita2enq-python
+    backstage.io/kubernetes-id: axita2enq-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: axita2enq-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:axita2enq-python
